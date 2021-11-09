@@ -197,9 +197,12 @@ export function unregister() {
 * once all of this is done and you have done the ```npm install history@5 react-router-dom@6``` you can continue to test to see if everything is working with ```npm start``` as stated above
 * once you see the app working in localhost:3000 you know the app works - now it is time to push it to CDN with some simple steps
 
+* ```npm run build ~/path-to-your-react-app-where-the-package.json-file-lives``` - this creates the bundled react package in a folder called ```build```
+* you can then ```cd build``` to see the contents and make sure everything is there
 * goto [surge](https://surge.sh) and use the command line ```npm install --global surge``` to set up surge on your CLI.
 * there are a couple things you have to set up in advance before you push:
   * you will need a CNAME file to hold your URL so you dont have to update it every single time ```echo <yourURL>.surge.sh > CNAME``` 
   * set up a html.200 file to launch your application with <script> tags
-    * ...needs to be updated... working on this now
-* then just type surge --help to see some of the commands. for my push install I am simply using ```surge <directory of application files/folders> <yourURL>.surge.sh```
+* then just type surge --help to see some of the commands. for my push install I am simply using ```surge <path-to-build-folder-created-above> <yourURL>.surge.sh```
+ 
+ ## Thats pretty much it. You have created a react app in REPL, ported it to your local machine using react-router and deployed it to the web without paying some company to host your files/set up servers/etc. easy.
